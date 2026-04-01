@@ -1,11 +1,9 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fundo original */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #85ea66 0%, #764ba2 100%);
@@ -13,14 +11,12 @@ body {
   padding: 20px;
 }
 
-/* Header */
 .topo {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Logo */
 h1 a {
   text-decoration: none;
   color: #4b0082;
@@ -50,7 +46,6 @@ nav a:hover {
   color: white;
 }
 
-/* Título */
 .titulo {
   text-align: center;
   margin: 30px 0;
@@ -60,14 +55,12 @@ nav a:hover {
   color: #764ba2;
 }
 
-/* Container de decks */
 .decks-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-/* Card deck */
 .deck {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -78,13 +71,11 @@ nav a:hover {
   transition: 0.3s;
 }
 
-/* Imagem */
 .deck img {
   width: 100%;
   border-radius: 10px;
 }
 
-/* Texto */
 .deck h3 {
   margin: 10px 0 5px;
   color: #4b0082;
@@ -94,7 +85,6 @@ nav a:hover {
   font-size: 14px;
 }
 
-/* Hover */
 .deck:hover {
   transform: scale(1.05);
 }

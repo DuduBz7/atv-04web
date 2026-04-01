@@ -1,25 +1,100 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo original */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #85ea66 0%, #764ba2 100%);
   min-height: 100vh;
-  display: flex;
   padding: 20px;
 }
-h1 {
-  font-size: 2em;
-  color: #e01f1f;
+
+/* Header */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+/* Logo */
+h1 a {
+  text-decoration: none;
+  color: #4b0082;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 h1 img {
-  width: 100px;
-  height: 70px;
-  vertical-align: middle;
+  width: 60px;
 }
-title {
-  font-size: 1.5em;
-  color: #e01f1f;
-  margin-right: 200px;
+
+/* Menu */
+nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
 }
-header h2 b {
+
+nav a {
+  text-decoration: none;
+  color: #4b0082;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* Título */
+.titulo {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.titulo h2 {
   color: #764ba2;
-  margin-left: 500px;
+}
+
+/* Container de decks */
+.decks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Card deck */
+.deck {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* Imagem */
+.deck img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Texto */
+.deck h3 {
+  margin: 10px 0 5px;
+  color: #4b0082;
+}
+
+.deck p {
+  font-size: 14px;
+}
+
+/* Hover */
+.deck:hover {
+  transform: scale(1.05);
 }

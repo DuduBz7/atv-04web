@@ -1,74 +1,177 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #7ed957, #6a0dad);
-    color: white;
-    min-height: 100vh;
+/* ===== MICROSOFT WINDOWS 2000 STYLE ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Tahoma:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+body {
+    font-family: 'Tahoma', 'MS Sans Serif', Arial, sans-serif;
+    font-size: 11px;
+    background-color: #008080; /* Windows 2000 teal desktop */
+    background-image:
+        radial-gradient(ellipse 200% 150% at 30% 40%, #009090 0%, #007070 60%, #005555 100%);
+    color: #000000;
+    min-height: 100vh;
+    padding: 8px 8px 40px 8px;
+}
+
+/* ===== TASKBAR ===== */
+body::after {
+    content: "Início  |  Fórum CR  |  11:45  ·  01/04/2000";
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: #d4d0c8;
+    border-top: 2px solid #ffffff;
+    box-shadow: inset 0 1px 0 #ffffff, inset 0 -1px 0 #808080;
+    line-height: 28px;
+    padding: 0 8px;
+    font-size: 11px;
+    font-family: 'Tahoma', sans-serif;
+    color: #000000;
+    z-index: 9999;
+}
+
+/* ===== WIN2000 BUTTON MIXIN ===== */
+/* raised bevel: white top-left, dark bottom-right */
+.win-raised {
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 1px 1px 0 #000000, -1px -1px 0 #dfdfdf;
+}
+
+/* ===== HEADER / TITLE BAR ===== */
 .topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
+    background: #d4d0c8;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 1px 1px 0 #000000;
+    margin-bottom: 6px;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Title bar strip */
+.topo::before {
+    content: '';
+    display: block;
+    height: 20px;
+    background: linear-gradient(to right, #000080, #1084d0);
+    padding: 2px 6px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
+    padding: 6px 10px 4px 10px;
 }
 
 .logo img {
-    width: 40px;
+    width: 24px;
+    height: 24px;
+    image-rendering: pixelated;
 }
 
 .logo h1 {
-    color: #4b0082;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000000;
+    letter-spacing: 0;
+}
+
+/* ===== NAVIGATION (toolbar) ===== */
+nav {
+    background: #d4d0c8;
+    border-top: 1px solid #808080;
+    padding: 3px 6px;
 }
 
 nav ul {
     display: flex;
-    gap: 20px;
+    gap: 2px;
     list-style: none;
 }
 
-nav a {
+nav ul li a {
+    display: inline-block;
     text-decoration: none;
-    color: #4b0082;
-    font-weight: bold;
-    transition: 0.3s;
+    color: #000000;
+    font-size: 11px;
+    padding: 3px 10px;
+    background: #d4d0c8;
+    border: 1px solid transparent;
 }
 
-nav a:hover {
-    color: white;
-    transform: scale(1.1);
+nav ul li a:hover {
+    border: 1px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 1px 1px 0 #000000;
+    background: #d4d0c8;
+    color: #000000;
 }
 
+nav ul li a:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: none;
+}
+
+/* ===== SECTION TITLE (window title bar style) ===== */
 .titulo {
-    text-align: center;
-    margin: 20px 0;
+    background: linear-gradient(to right, #000080, #1084d0);
+    margin-bottom: 6px;
+    padding: 3px 8px;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 1px 1px 0 #000000;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.titulo::before {
+    content: '📋';
+    font-size: 14px;
 }
 
 .titulo h2 {
-    color: #7b2cbf;
-    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 #000040;
 }
 
+/* ===== MAIN WINDOW CONTAINER ===== */
 .grid {
+    background: #d4d0c8;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 1px 1px 0 #000000;
+    padding: 6px;
+
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 15px;
-    padding: 20px;
+    gap: 6px;
 }
 
+/* ===== CARDS (windows / panels) ===== */
 .card {
     position: relative;
-    border-radius: 15px;
+    background: #ffffff;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: inset 1px 1px 0 #000000;
     overflow: hidden;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
     cursor: pointer;
+    min-height: 160px;
 }
 
 .grande {
@@ -79,21 +182,58 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.4s;
+    display: block;
+    transition: none;
+    image-rendering: auto;
+    filter: saturate(0.85) contrast(1.05);
 }
 
+/* Hover: classic sunken inset */
+.card:hover {
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: inset 1px 1px 0 #dfdfdf;
+}
+
+.card:hover img {
+    filter: saturate(1) contrast(1.1) brightness(1.05);
+}
+
+/* ===== OVERLAY (status bar style) ===== */
 .overlay {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    background: #d4d0c8;
+    border-top: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 3px 6px;
 }
 
 .overlay h3 {
-    font-size: 18px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.card:hover img {
-    transform: scale(1.08);
+/* ===== DESKTOP ICONS (decorative corners) ===== */
+.desktop-icon {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px #000000;
+    cursor: pointer;
+    padding: 4px;
+    width: 60px;
+    text-align: center;
+}
+
+.desktop-icon:hover {
+    background: #000080;
+    outline: 1px dotted #ffffff;
 }

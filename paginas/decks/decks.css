@@ -1,0 +1,25 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #85ea66 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  padding: 20px;
+}
+h1 {
+  font-size: 2em;
+  color: #e01f1f;
+}
+h1 img {
+  width: 100px;
+  height: 70px;
+  vertical-align: middle;
+}
+title {
+  font-size: 1.5em;
+  color: #e01f1f;
+  margin-right: 200px;
+}
+header h2 b {
+  color: #764ba2;
+  margin-left: 500px;
+}

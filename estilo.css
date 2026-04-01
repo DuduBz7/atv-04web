@@ -1,22 +1,99 @@
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #85ea66 0%, #764ba2 100%);
-  min-height: 100vh;
-  display: flex;
-  padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #7ed957, #6a0dad);
+    color: white;
+    min-height: 100vh;
 }
-h1 {
-  font-size: 2em;
-  color: #e01f1f;
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
 }
-h1 img {
-  width: 100px;
-  height: 70px;
-  vertical-align: middle;
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-title {
-  font-size: 1.5em;
-  color: #e01f1f;
-  margin-right: 200px;
+
+.logo img {
+    width: 40px;
+}
+
+.logo h1 {
+    color: #4b0082;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4b0082;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.titulo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.titulo h2 {
+    color: #7b2cbf;
+    letter-spacing: 2px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.grande {
+    grid-row: span 2;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.overlay h3 {
+    font-size: 18px;
+}
+
+.card:hover img {
+    transform: scale(1.08);
 }
